@@ -15,6 +15,7 @@ spec:
       containers:
         - name: spring-boot-k8s
           image: k8/devops-integration
+          imagePullPolicy: Never
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
 
