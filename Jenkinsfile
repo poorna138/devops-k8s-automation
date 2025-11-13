@@ -11,8 +11,8 @@ pipeline {
             steps{
                 script{
                     sh 'docker build -t k8/devops-integration:latest .'
-                    sh 'docker tag k8/devops-integration:latest localhost:5000/k8/devops-integration:latest'
-                    sh 'docker push localhost:5000/k8/devops-integration:latest'
+                    sh 'docker tag k8/devops-integration:latest localhost:8081/k8/devops-integration:latest'
+                    sh 'docker push localhost:8081/k8/devops-integration:latest'
                 }
             }
         }
