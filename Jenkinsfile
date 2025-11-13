@@ -11,12 +11,9 @@ pipeline {
             steps{
                 script{
                     sh 'docker build -t k8/devops-integration:latest .'
+                    sh 'docker tag k8/devops-integration:latest localhost:5000/k8/devops-integration:latest
+                    sh 'docker push localhost:5000/k8/devops-integration:latest
                 }
-            }
-        }
-        stage('Load image into minikube'){
-            steps{
-                sh 'minikube image load k8/devops-integration:latest'
             }
         }
         stage('Deploy to k8s'){
