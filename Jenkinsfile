@@ -10,7 +10,10 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t k8/devops-integration .'
+                    sh '"
+                        eval $(minikube docker-env)
+                        docker build -t k8/devops-integration .
+                       '"
                 }
             }
         }
