@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Load image into minikube'){
             steps{
-                sh 'minikube image load k8/devops-integration:latest
+                sh 'minikube image load k8/devops-integration:latest'
             }
         }
         stage('Deploy to k8s'){
